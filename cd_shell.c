@@ -24,3 +24,21 @@ int cd_shell(data_shell *datash)
 	{
 		cd_to_home(datash);
 		return (1);
+}
+
+	if (_strcmp("-", dir) == 0)
+	{
+		cd_previous(datash);
+		return (1);
+	}
+
+	if (_strcmp(".", dir) == 0 || _strcmp("..", dir) == 0)
+	{
+		cd_dot(datash);
+		return (1);
+	}
+
+	cd_to(datash);
+
+	return (1);
+}
